@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Christmas Eve Hover 🎄</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Arial, sans-serif;
+        background: #0f0f0f;
+        transition: background 0.6s ease;
+        background-size: cover;
+        background-position: center;
+    }
+
+    body.christmas {
+        background-image: url("https://images.unsplash.com/photo-1608889175250-c3b0c166a3b4");
+    }
+
+    .container {
+        text-align: center;
+        background: rgba(0,0,0,0.55);
+        padding: 30px;
+        border-radius: 20px;
+        backdrop-filter: blur(4px);
+    }
+
+    .message {
+        color: white;
+        font-size: 18px;
+        margin-bottom: 15px;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    body.christmas .message {
+        opacity: 1;
+    }
+
+    button {
+        width: 160px;
+        height: 60px;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        background: #1b5e20;
+        color: white;
+        font-size: 16px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0,255,0,0.6);
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="message">
+        -1 day before Christmas. I am sorry for being late
+    </div>
+
+    <button id="hoverBtn">
+        Hover Me 🎄
+    </button>
+</div>
+
+<script>
+    const btn = document.getElementById("hoverBtn");
+    const body = document.body;
+
+    btn.addEventListener("mouseenter", () => {
+        body.classList.add("christmas");
+    });
+
+    btn.addEventListener("mouseleave", () => {
+        body.classList.remove("christmas");
+    });
+
+    btn.addEventListener("click", () => {
+        window.open(
+            "https://www.instagram.com/p/DSJLgQbkdbj",
+            "_blank"
+        );
+    });
+</script>
+
+</body>
+</html>
